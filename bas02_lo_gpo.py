@@ -6,7 +6,7 @@ XBeeのLEDを点滅させてみる：IOポート4に接続したLEDを点滅
                                                   Copyright (c) 2018-2019 Wataru KUNINO
 '''
 import xbee
-import sys, time
+import time
 pinout={1:'D1', 2:'D2', 3:'D3', 4:'D4', 10:'P0', 11:'P1', 12:'P1'}
 
 def gpo(port,val):                          # getTemp関数を定義する

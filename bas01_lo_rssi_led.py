@@ -7,7 +7,7 @@ XBeeのLEDを点滅させてみる：RSSI LED（Port 10）を5回、点滅して
                                                   Copyright (c) 2018-2019 Wataru KUNINO
 '''
 import xbee
-import sys, time
+import time
 
 for i in range(1,5):                        # 繰り返し（5回）
     xbee.atcmd('P0',0x05)                   # RSSI用 LEDを点灯する

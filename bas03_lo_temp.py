@@ -5,7 +5,7 @@
                                                   Copyright (c) 2018-2019 Wataru KUNINO
 '''
 import xbee
-import sys, time
+import time
 TEMP_OFFSET=14.0                            # 内部温度上昇
 
 def getTemp():                              # getTemp関数を定義する
