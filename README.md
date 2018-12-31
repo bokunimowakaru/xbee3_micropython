@@ -102,6 +102,6 @@ XBeeのGPIO汎用ポート一覧表
 使用・変更・配布は可能ですが，権利表示を残してください。
 また，提供情報や配布ソフトによって生じたいかなる被害についても，一切，補償いたしません。
 
-							   Copyright (c) 2010-2018 Wataru KUNINO
+							   Copyright (c) 2018-2019 Wataru KUNINO
 							   http://bokunimo.net/
 
