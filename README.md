@@ -4,6 +4,9 @@
 
 ![説明図](xbee3_micropython.jpg)
 
+MicroPython 基本サンプル・スクリプトで無線通信実験：
+https://blogs.yahoo.co.jp/bokunimowakaru/56291646.html
+
 ## 対応XBeeモジュール
 
 - XBee3 (ZigBee)
