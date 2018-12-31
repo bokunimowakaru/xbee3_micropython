@@ -2,6 +2,8 @@
 	XBee3 ZigBeeでサポートされた Digi MicroPython を利用したサンプル集です。  
 	Examples of Digi MicroPython Scripts for XBee3 ZigBee, written by bokunimo.net  
 
+![説明図](xbee3_micropython.jpg =600x450)
+
 ## 対応XBeeモジュール
 
 - XBee3 (ZigBee)
