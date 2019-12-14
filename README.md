@@ -5,7 +5,7 @@
 ![説明図](xbee3_micropython.jpg)
 
 MicroPython 基本サンプル・スクリプトで無線通信実験：
-https://blogs.yahoo.co.jp/bokunimowakaru/56291646.html
+https://bokunimo.net/blog/raspberry-pi/16/
 
 ## 対応XBeeモジュール
 
@@ -85,7 +85,7 @@ XBeeのGPIO汎用ポート一覧表
 ## 関連リンク
 
 - Digi XBee3 ZB対応 XBeeライブラリ Raspberry Pi 版の公開について 
-	https://blogs.yahoo.co.jp/bokunimowakaru/56286434.html
+	https://bokunimo.net/blog/raspberry-pi/17/
 
 - ボクにもわかるXBee用センサネットワーク：  
 	http://bokunimo.net/xbee/  
