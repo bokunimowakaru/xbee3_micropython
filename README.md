@@ -4,10 +4,10 @@
 
 ![説明図](xbee3_micropython.jpg)
 
-MicroPython 基本サンプル・スクリプトで無線通信実験：
-https://bokunimo.net/blog/raspberry-pi/16/
+## 子機・XBee3 ZigBee 
 
-## 対応XBeeモジュール
+子機にはXBee3 ZigBeeモジュールを使用します。  
+MicroPythonのスクリプトを書き込むには、XBee USBエクスプローラとPCなどが必要です。スクリプト書き込み後は、電源を供給するだけで動かすことが出来ます。  
 
 - XBee3 (ZigBee)
 
@@ -80,6 +80,54 @@ XBeeのGPIO汎用ポート一覧表
 |    4 |DIO4     |  11 |  ○ | ×  |  ◎  |汎用出力用(LED3)  
 |   11 |DIO11    |   7 |  ○ | ×  |  ◎  |汎用出力用(LED2)／I2C SCL  
 |   12 |DIO12    |   4 |  ○ | ×  |  ○  |汎用出力用(LED1)／I2C SDA  
+
+
+## 親機 XBee ZigBee Coordinator の作成方法
+
+Raspberry Pi用のプログラムを下記のコマンドでダウンロードし、コンパイルしてください。  
+
+	pi@raspberrypi:~ $ git clone -b raspi https://github.com/bokunimowakaru/xbeeCoord.git
+	pi@raspberrypi:~ $ cd xbeeCoord/tools/
+	pi@raspberrypi:~/xbeeCoord/tools $ make
+
+ZigBeeモード設定ツール「xbee_zb_mode」を起動し、XBee Coordinator APIモードに設定して下さい。末尾の「B0」は「ttyUSB0」の場合です。  
+実行後、「10」と「Enter」を入力すれば、設定できます。設定時にエラーが出た場合は、やり直してください。  
+
+
+	pi@raspberrypi:~/xbeeCoord/tools $ ./xbee_zb_mode B0
+	
+	CONNECTED 0(0x00):176(0xB0)
+	
+	ZIGBEE Device Type Switcher for XBee ZB S2C / XBee3 Series
+	00:Coordinator AT,  01:Router AT,  02:End Device AT
+	10:Coordinator API, 11:Router API, 12:End Device API
+	
+	Mode =10 <-------------------- 10:Coordinator API
+
+設定が完了したら、XBee テスト用ツール「xbee_test」を起動してください。  
+
+	pi@raspberrypi:~ $ cd ~/xbeeCoord/tools
+	pi@raspberrypi:~/xbeeCoord/tools $ ./xbee_test B0
+
+xbee_testは、XBeeモジュールを常時ペアリングが可能なモードに設定します。このため、通常は自動的にペアリングが行われ、xbee_testに「recieved IDNT」が表示されます。  
+
+ペアリング後に、子機XBee3から温度情報が送られてくると、「recieved UART」に続き、温度値と電源電圧値が表示されます。下記の例では、温度19.0℃、電源電圧3.302Vが得られました。  
+
+	--------------------
+	recieved UART
+	--------------------
+	from   :0013A200 xxxxxxxx
+	status :02 broadcast packet
+	length :10 (0x0A)
+	data   : 19.0, 3.302
+
+	AT>
+
+
+## MicroPython 基本サンプル・スクリプトで無線通信実験
+
+- 実験の流れをブログに書きました。  
+	https://bokunimo.net/blog/raspberry-pi/16/
 
 
 ## 関連リンク
